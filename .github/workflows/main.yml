@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Curl Ping
-        run: curl https://meet-sync.onrender.com/
+        run: curl https://meet-sync-backend-2.onrender.com/

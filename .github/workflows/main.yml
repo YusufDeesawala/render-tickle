@@ -1,12 +1,14 @@
-name: Keep Render Server Alive
+name: Keep Render App Alive
 
 on:
   schedule:
-    - cron: "*/1 * * * *" 
+    - cron: '*/3 * * * *'  # Every 3 minutes
+  workflow_dispatch:
 
 jobs:
-  ping:
+  keep-alive:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Curl Ping
-        run: curl https://meet-sync-backend-2.onrender.com/
+      - name: Ping Render app
+        run: curl -m 10 --silent --show-error --fail https://flask-email-app-6zfp.onrender.com/
